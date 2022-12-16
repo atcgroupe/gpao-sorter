@@ -1,0 +1,16 @@
+<header>
+    <h1>PAO</h1>
+    <ul>
+        <li {% if type == 'prod' %}class="active"{% endif %}>
+            <a href="{{ path('home', { type: 'prod' }) }}">Prod</a>
+        </li>
+
+        <li {% if type == 'mak' %}class="active"{% endif %}>
+            <a href="{{ path('home', { type: 'mak' }) }}">Maquettes</a>
+        </li>
+
+        <li {% if type == 'cov' %}class="active"{% endif %}>
+            <a href="{{ path('home', { type: 'cov' }) }}">Covering</a>
+        </li>
+    </ul>
+</header>

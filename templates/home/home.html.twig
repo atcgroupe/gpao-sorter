@@ -1,0 +1,64 @@
+{% extends 'core/app.html.twig' %}
+
+{% block main %}
+  <ul class="list">
+    {% for elem in Data %}
+      <li class="list-item" data-prod-data-id="{{ elem.id }}">
+        <ul>
+          <li class="picto number {% if not elem.prod.delaiProd %}danger{% endif %}">
+            {{ elem.points }} pt
+          </li>
+
+          <li class="border-right">
+            <a href="http://192.168.69.247/GpaoLight/Vue/Prod/Main.php?IdProd={{ elem.prod.id }}&Retour=ListingProd">
+              {{ elem.codeAffaire.libelleRecherche }} {{ elem.prod.numberCode }}
+            </a>
+          </li>
+
+          <li>{{ elem.codeAffaire.client.nom }}</li>
+
+          <li class="picto">
+            <p>{{ elem.prod.displayType }}</p>
+          </li>
+
+          {% if elem.prod.statistics.fabrications %}
+            <li>{{ elem.prod.statistics.displayFabrication }}</li>
+          {% endif %}
+        </ul>
+
+        <ul>
+          {% if elem.prod.hasStatistics %}
+            <li class="picto">
+              {% if elem.prod.statistics.surface %}
+                <i class="fa-solid fa-crop-simple"></i>
+                <p class="mr-1">{{ elem.prod.statistics.displaySurface }}</p>
+              {% endif %}
+
+              {% if elem.prod.statistics.items %}
+                <i class="fa-regular fa-file"></i>
+                <p class="mr-1">{{ elem.prod.statistics.displayJobs }}</p>
+                <i class="fa-regular fa-copy"></i>
+                <p>{{ elem.prod.statistics.displayQuantity }}</p>
+              {% endif %}
+            </li>
+          {% endif %}
+
+          <li class="picto">
+            <i class="fa-solid fa-arrow-right-to-bracket sent"></i>
+            <p>{{ elem.formattedSentDate }}</p>
+
+            {% if elem.prod.delaiPao %}
+              <i class="fa-regular fa-file-pdf pao ml-1"></i>
+              <p>{{ elem.prod.formattedDate('PAO') }}</p>
+            {% endif %}
+
+            {% if elem.prod.delaiProd %}
+              <i class="fa-solid fa-print prod ml-1"></i>
+              <p>{{ elem.prod.formattedDate('PROD') }}</p>
+            {% endif %}
+          </li>
+        </ul>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}

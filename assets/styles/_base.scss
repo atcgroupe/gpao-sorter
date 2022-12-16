@@ -1,0 +1,35 @@
+:root {
+  font-size: 62.5%;
+  color: var(--gray-1100);
+  position: relative;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: var(--font-family);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: var(--gray-1100);
+  text-decoration: none;
+}
+
+input {
+  font-size: 1.6rem;
+  padding: 1rem 1.5rem;
+  outline: 0;
+  border: var(--border-light);
+  border-radius: 0.5rem;
+}
+
+button {
+  font-size: 1.6rem;
+  padding: 1rem 1.5rem;
+  border: var(--border-light);
+  background-color: white;
+  border-radius: 0.5rem;
+}

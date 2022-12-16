@@ -1,0 +1,39 @@
+version: "3.8"
+
+services:
+  encore:
+    build:
+      context: .
+      dockerfile: "Dockerfile.encore"
+    volumes:
+      - type: volume
+        source: build
+        target: /app/public/build
+  fpm:
+    build:
+      context: .
+      dockerfile: "Dockerfile.fpm"
+    volumes:
+      - type: volume
+        source: build
+        target: /app/public/build
+    restart: unless-stopped
+    depends_on:
+      - encore
+  nginx:
+    build:
+      context: .
+      dockerfile: "Dockerfile.nginx"
+    volumes:
+      - type: volume
+        source: build
+        target: /app/public/build
+    ports:
+      - "9001:80"
+      - "9443:443"
+    restart: unless-stopped
+    depends_on:
+      - fpm
+
+volumes:
+  build:
