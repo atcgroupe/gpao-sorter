@@ -32,4 +32,9 @@ button {
   border: var(--border-light);
   background-color: white;
   border-radius: 0.5rem;
+  transition: box-shadow 0.2s ease-in-out;
+
+  &:hover {
+    box-shadow: var(--box-shadow);
+  }
 }

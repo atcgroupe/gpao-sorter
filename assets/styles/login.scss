@@ -1,0 +1,38 @@
+body {
+  background-color: var(--gray-50);
+}
+
+.form-container {
+  height: 100vh;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+
+  form {
+    width: 100%;
+    max-width: 40rem;
+    padding: 3rem;
+    border-radius: 1rem;
+    background-color: white;
+    box-shadow: var(--box-shadow);
+
+    h1 {
+      margin-bottom: 2rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-flow: column nowrap;
+      margin-top: 1rem;
+
+      label {
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    button[type="submit"] {
+      margin-top: 2rem;
+    }
+  }
+}

@@ -15,6 +15,8 @@ security:
                     jchante: { password: 'ATC$pass', roles: ['ROLE_USER'] }
                     lpoezevara: { password: 'ATC$pass', roles: ['ROLE_USER'] }
                     mberbudeau: { password: 'ATC$pass', roles: ['ROLE_USER'] }
+                    nflorio: { password: 'ATC$pass', roles: ['ROLE_USER'] }
+                    sthomas: { password: 'ATC$pass', roles: ['ROLE_USER'] }
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
