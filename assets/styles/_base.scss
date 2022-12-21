@@ -16,6 +16,11 @@ ul {
 a {
   color: var(--gray-1100);
   text-decoration: none;
+  transition: color 0.2s ease-in-out;
+
+  &:hover {
+    color: var(--blue-primary);
+  }
 }
 
 input {
