@@ -22,8 +22,16 @@ header {
   position: sticky;
   top: 0;
 
+  img {
+    display: block;
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 50%;
+  }
+
   h1 {
     font-weight: 400;
+    margin-left: 1rem;
   }
 
   ul {

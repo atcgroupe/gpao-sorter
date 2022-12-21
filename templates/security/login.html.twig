@@ -5,6 +5,8 @@
 {% block body %}
   <div class="form-container">
     <form method="post">
+      <img src="https://minions.fr/wp-content/uploads/2021/10/minions-bob-peluche.jpg" alt="logo">
+
       {% if error %}
         <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
       {% endif %}
